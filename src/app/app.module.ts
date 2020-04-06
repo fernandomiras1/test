@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyZumoModule } from 'my-zumo';
-
+// solo el boton
+import { NGZButtonModule } from 'my-zumo';
+// toda la libreria
+// import { MyZumoModule } from 'my-zumo';
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +14,7 @@ import { MyZumoModule } from 'my-zumo';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MyZumoModule
+    NGZButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
