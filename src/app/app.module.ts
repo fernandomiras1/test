@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // solo el boton
-import { NGZButtonModule } from 'my-zumo';
+// import { NGZButtonModule } from 'my-zumo';
 // toda la libreria
-// import { MyZumoModule } from 'my-zumo';
+import { MyZumoModule } from 'my-zumo';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,9 +14,10 @@ import { NGZButtonModule } from 'my-zumo';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NGZButtonModule
+    MyZumoModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
