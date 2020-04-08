@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-test';
+  isLoadingPrimaryWithSpinner: boolean;
   min = 0;
   max = 2000;
   step = 1;
@@ -16,6 +17,13 @@ export class AppComponent {
 
   public valuesChange(value: number) {
     console.log(value);
+  }
+
+  onClickPrimaryWithSpinner() {
+    this.isLoadingPrimaryWithSpinner = true;
+    setTimeout(() => {
+      this.isLoadingPrimaryWithSpinner = false;
+    },         3000);
   }
 
 }
