@@ -53,7 +53,7 @@
   "standard-version": {
     "skip": {
       "tag": true,
-      "commit": true
+      "commit": false
     },
     "scripts": {
       "postchangelog": "bash fixChangelog"
