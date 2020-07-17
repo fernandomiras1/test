@@ -56,9 +56,6 @@
     "skip": {
       "tag": true,
       "commit": true
-    },
-    "scripts": {
-      "postchangelog": "bash fixChangelog"
     }
   },
   "husky": {
