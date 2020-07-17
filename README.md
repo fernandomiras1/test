@@ -1,4 +1,13 @@
 
+### Instalar commitlint
+
+Fuente: https://www.npmjs.com/package/@commitlint/cli
+
+```sh
+npm install --save-dev @commitlint/cli @commitlint/config-angular
+echo "module.exports = {extends: ['@commitlint/config-angular']};" > commitlint.config.js
+```
+
 ### Git commit
 
 > Para realizar un commit es recomendable asociar un tipo de contenido a ser subido, el mismo nos ayudará a dar más trazabilidad en el changelog. 

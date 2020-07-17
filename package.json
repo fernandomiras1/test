@@ -33,6 +33,8 @@
     "@angular/cli": "~9.0.7",
     "@angular/compiler-cli": "~9.0.7",
     "@angular/language-service": "~9.0.7",
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-angular": "^9.1.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -53,7 +55,7 @@
   "standard-version": {
     "skip": {
       "tag": true,
-      "commit": false
+      "commit": true
     },
     "scripts": {
       "postchangelog": "bash fixChangelog"
