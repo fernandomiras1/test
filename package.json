@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "release": "standard-version -t ''",
+    "report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/angular-test/stats-es2015.json",
     "release:major": "npm run release -- --release-as major",
     "release:minor": "npm run release -- --release-as minor",
     "release:patch": "npm run release -- --release-as patch",
@@ -51,7 +52,8 @@
     "standard-version": "^8.0.2",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "webpack-bundle-analyzer": "^3.8.0"
   },
   "standard-version": {
     "skip": {
