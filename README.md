@@ -1,27 +1,64 @@
-# AngularTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+### Instalar commitlint
 
-## Development server
+Fuente: https://www.npmjs.com/package/@commitlint/cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```sh
+npm install --save-dev @commitlint/cli @commitlint/config-angular
+echo "module.exports = {extends: ['@commitlint/config-angular']};" > commitlint.config.js
+```
 
-## Code scaffolding
+Segundo instalamos husky
+Fuente: https://www.npmjs.com/package/husky
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm install husky --save-dev
+```
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Git commit
 
-## Running unit tests
+> Para realizar un commit es recomendable asociar un tipo de contenido a ser subido, el mismo nos ayudará a dar más trazabilidad en el changelog. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+El funcionamiento es bastante sencillo, sólo tenemos que agregarle al commit tradicional algunas de las tipologias (feat, fix...) como parte del prefix del mensaje. 
 
-## Running end-to-end tests
+Es recomendable que el primer commit que hagas sobre tu branch tenga el número de jira, es decir, en donde dice **jira short name-XXX** debería ser remplazado por el nombre corto de jira y el número asociado.
+> Ej: 
+  Tenemos el siguiente ticket: https://naranja.atlassian.net/browse/ZDS-1053
+  el commit seria el siguiente:
+```sh
+git commit -m "fix: zds-1053 corregir los márgenes negativos"
+```
+#### Tipologías aceptadas:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* **build**: Cambios que afectan el sistema de compilación o las dependencias externas (ámbitos de ejemplo: trago, brócoli, npm)
+* **ci**: Cambios en nuestros archivos de configuración y scripts de CI (ámbitos de ejemplo: Circle, BrowserStack, SauceLabs)
+* **docs**: Cambios en la doc
+* **feat**: Una nueva funcionalidad
+* **fix**: Un fix de un bug
+* **perf**: Un cambio de código que mejora el rendimiento.
+* **refactor**: Un cambio de código que no corrige un error ni agrega una característica
+* **style**: Cambios que no afectan el significado del código (espacios en blanco, formato, puntos y comas que faltan, etc.)
+* **test**: Agregar test faltantes o corregir test existentes
+* **revert**: Un revert de un commit
 
-## Further help
+### Ejemplos:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+_fix:_
+
+```sh
+git commit -a -m "fix: <jira short name>-XXX se arregla el problema xxx"
+```
+
+_features:_
+
+```sh
+git commit -a -m "feat: <jira short name >-XXX se implementa xxx"
+```
+
+_documentación:_
+
+```sh
+git commit -a -m "docs: <jira short name >-XXX fixed up the docs a bit"
+```
+---
